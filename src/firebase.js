@@ -1,16 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
-var firebaseConfig = {
-    apiKey: "AIzaSyCpdkfyYzNjyAyrDkYpyyKMQpwF8XWjfgY",
-    authDomain: "push-notification-4cf1d.firebaseapp.com",
-    projectId: "push-notification-4cf1d",
-    storageBucket: "push-notification-4cf1d.appspot.com",
-    messagingSenderId: "112705951456",
-    appId: "1:112705951456:web:9bd87ca3d06c02eedca285",
-    measurementId: "G-KW8760KBWY"
-};
-
 const firebaseApp = initializeApp(firebaseConfig);
 const messaging = getMessaging(firebaseApp);
 
