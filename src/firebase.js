@@ -9,13 +9,14 @@ var firebaseConfig = {
     messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+    vapidKey: process.env.REACT_APP_FIREBASE_VAPID_KEY,
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
 const messaging = getMessaging(firebaseApp);
 
 export const fetchToken = (setTokenFound) => {
-    return getToken(messaging, { vapidKey: 'BNpPLjx2kvfNYSBtqGG9JP5c9EV4H-JmEzyX77PE-YwJwXo1QFWPh0dVHnAYTNK38vnjC-AtUQoV316XMw9j-Mo' }).then((currentToken) => {
+    return getToken(messaging, { vapidKey: process.env.REACT_APP_FIREBASE_VAPID_KEY }).then((currentToken) => {
         if (currentToken) {
             console.log('current token for client: ', currentToken);
             setTokenFound(true);
